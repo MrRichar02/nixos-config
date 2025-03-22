@@ -106,7 +106,9 @@
 
   ];
 
-  home.file = {
+  home.file.".config/waybar" = {
+    source = ./bars/waybar;
+    recursive = true;
   };
 
   # This value determines the Home Manager release that your
