@@ -110,6 +110,14 @@
     #  wget
   ];
 
+  #stylix conf
+
+  stylix.base16-scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+
+
+
+  #virt-manager config
+
   programs.virt-manager.enable = true;
 
   users.groups.libvirtd.members = ["docair"];
