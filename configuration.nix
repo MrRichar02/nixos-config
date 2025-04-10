@@ -67,10 +67,10 @@
   #  services.printing.enable = true;
 
   #MySQL
-  services.mysql = {
-    enable = true;
-    package = pkgs.mariadb;
-  };
+  # services.mysql = {
+  #   enable = true;
+  #   package = pkgs.mariadb;
+  # };
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
