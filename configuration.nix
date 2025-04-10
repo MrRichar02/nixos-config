@@ -66,6 +66,12 @@
   # Enable CUPS to print documents.
   #  services.printing.enable = true;
 
+  #MySQL
+  services.mysql = {
+    enable = true;
+    package = pkgs.mariadb;
+  };
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
