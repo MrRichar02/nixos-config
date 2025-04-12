@@ -2,7 +2,7 @@
 
 Hello darlings, i'm gonna tell you what you should do after clonning the repo, but first clone it
 ```
-git clone https://github.com/MrRichar02/Nixos-config.git config-flake
+git clone https://github.com/MrRichar02/Nixos-config.git nixos-config
 ```
 
 Delete the hardware-configuration.nix file in the cloned repo
