@@ -105,25 +105,24 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    mysql-workbench
     adwaita-icon-theme
   ];
 
   #virt-manager config
-
-  programs.virt-manager.enable = true;
-
-  users.groups.libvirtd.members = ["docair"];
-
-  virtualisation.libvirtd.enable = true;
-
-  virtualisation.spiceUSBRedirection.enable = true;
-
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-    noto-fonts
-    nerd-fonts.fira-code
-  ];
+  #
+  # programs.virt-manager.enable = true;
+  #
+  # users.groups.libvirtd.members = ["docair"];
+  #
+  # virtualisation.libvirtd.enable = true;
+  #
+  # virtualisation.spiceUSBRedirection.enable = true;
+  #
+  # fonts.packages = with pkgs; [
+  #   nerd-fonts.jetbrains-mono
+  #   noto-fonts
+  #   nerd-fonts.fira-code
+  # ];
 
   programs.hyprland.enable = true;
 
