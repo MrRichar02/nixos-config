@@ -67,10 +67,10 @@
   #  services.printing.enable = true;
 
   #MySQL
-  # services.mysql = {
-  #   enable = true;
-  #   package = pkgs.mariadb;
-  # };
+  services.mysql = {
+    enable = true;
+    package = pkgs.mariadb;
+  };
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -105,16 +105,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    virt-manager
-    virt-viewer
-    spice 
-    spice-gtk
-    spice-protocol
-    win-virtio
-    win-spice
+    mysql-workbench
     adwaita-icon-theme
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
   ];
 
   #virt-manager config
@@ -134,10 +126,6 @@
   ];
 
   programs.hyprland.enable = true;
-
-  services.upower.enable = true;
-
-  services.udisks2.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
