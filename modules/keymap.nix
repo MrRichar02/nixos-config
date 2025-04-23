@@ -1,10 +1,15 @@
+{lib, config, ...}:
 {
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "latam";
-    variant = "";
-  };
+  options.myModules.keymap.enable = lib.mkEnableOption "enables keymap module";
 
-  # Configure console keymap
-  console.keyMap = "la-latin1";
+  config = lib.mkIf config.myModules.keymap.enable {
+    # Configure keymap in X11
+    services.xserver.xkb = {
+      layout = "latam";
+      variant = "";
+    };
+
+    # Configure console keymap
+    console.keyMap = "la-latin1";
+  };
 }

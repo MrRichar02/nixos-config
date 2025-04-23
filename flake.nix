@@ -14,7 +14,8 @@
         specialArgs = { inherit inputs; };
 
         modules = [
-          ./configuration.nix
+          ./hosts/laptop-thinkpad/configuration.nix
+          ./modules
           inputs.stylix.nixosModules.stylix
         ];
       };

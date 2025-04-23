@@ -1,8 +1,11 @@
-{pkgs, ...}:
+{pkgs, lib, config, ...}:
 {
-  #MySQL
-  services.mysql = {
-    enable = true;
-    package = pkgs.mariadb;
+  options.myModules.mysql.enable = lib.mkEnableOption "enables mysql";
+
+  config = lib.mkIf config.myModules.mysql.enable {
+    services.mysql = {
+      enable = true;
+      package = pkgs.mariadb;
+    };
   };
 }
