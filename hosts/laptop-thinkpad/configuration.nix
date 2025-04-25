@@ -13,7 +13,7 @@
   users.users.docair = {
     isNormalUser = true;
     description = "docair";
-    extraGroups = ["networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel" "wireshark" ];
     shell = pkgs.bash;
   };
 
