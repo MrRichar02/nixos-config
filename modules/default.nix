@@ -11,5 +11,6 @@
     ./bootloader.nix
     ./networking.nix
     ./virtmanager.nix
+    ./wireshark.nix
   ];
 }

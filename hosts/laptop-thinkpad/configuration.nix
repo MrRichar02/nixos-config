@@ -26,6 +26,7 @@
     keymap.enable = true;
     nix.enable = true;
     stylix.enable = true;
+    wireshark.enable = true;
   };
 
 
