@@ -10,7 +10,7 @@
     ./timezone.nix
     ./bootloader.nix
     ./networking.nix
-    ./virtmanager.nix
+    ./virt-manager.nix
     ./wireshark.nix
   ];
 }

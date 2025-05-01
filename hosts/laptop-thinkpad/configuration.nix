@@ -13,7 +13,7 @@
   users.users.docair = {
     isNormalUser = true;
     description = "docair";
-    extraGroups = ["networkmanager" "wheel" "wireshark" ];
+    extraGroups = ["networkmanager" "wheel" "wireshark" "libvirtd" ];
     shell = pkgs.bash;
   };
 
@@ -27,6 +27,7 @@
     nix.enable = true;
     stylix.enable = true;
     wireshark.enable = true;
+    virt-manager.enable = true;
   };
 
 
