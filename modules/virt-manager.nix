@@ -11,12 +11,5 @@
 
     virtualisation.spiceUSBRedirection.enable = true;
 
-    networking.interfaces.virbr0.ipv4.addresses = [
-      {
-        address = "10.0.0.1";
-        prefixLength = 24;
-      }
-    ];
-
   };
 }
