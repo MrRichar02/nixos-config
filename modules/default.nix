@@ -12,5 +12,6 @@
     ./networking.nix
     ./virt-manager.nix
     ./wireshark.nix
+    ./disk.nix
   ];
 }
