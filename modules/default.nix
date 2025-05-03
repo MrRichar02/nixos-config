@@ -1,17 +1,10 @@
 {
   imports = [
     ./style
-    ./nix.nix
-    ./audio.nix
-    ./mysql.nix
-    ./keymap.nix
-    ./firewall.nix
-    ./hyprland.nix
-    ./timezone.nix
-    ./bootloader.nix
-    ./networking.nix
-    ./virt-manager.nix
+    ./system
+    ./services
+    ./wms
     ./wireshark.nix
-    ./disk.nix
+    ./virt-manager.nix
   ];
 }

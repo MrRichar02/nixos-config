@@ -1,4 +1,4 @@
-{lib, config, ...}:
+{lib, config, pkgs, ...}:
 {
   options.myModules.bootloader.enable = lib.mkEnableOption "enables . module";
 
@@ -13,6 +13,7 @@
       efiSupport = true;
       device = "nodev";
       useOSProber = true;
+      theme = "${pkgs.libsForQt5.breeze-grub}/grub/themes/breeze";
     };
   };
 }
