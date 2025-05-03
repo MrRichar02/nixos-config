@@ -26,8 +26,8 @@
     keymap.enable = true;
     nix.enable = true;
     stylix.enable = true;
-    wireshark.enable = true;
-    virt-manager.enable = true;
+    wireshark.enable = false;
+    virt-manager.enable = false;
   };
 
 
