@@ -13,7 +13,7 @@
       efiSupport = true;
       device = "nodev";
       useOSProber = true;
-      theme = "${pkgs.libsForQt5.breeze-grub}/grub/themes/breeze";
+      theme = "${pkgs.catppuccin-grub}";
     };
   };
 }
