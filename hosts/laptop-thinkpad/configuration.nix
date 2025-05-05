@@ -14,7 +14,7 @@
     isNormalUser = true;
     description = "docair";
     extraGroups = ["networkmanager" "wheel" "wireshark" "libvirtd" ];
-    shell = pkgs.nushell;
+    shell = pkgs.zsh;
   };
 
   myModules = {
