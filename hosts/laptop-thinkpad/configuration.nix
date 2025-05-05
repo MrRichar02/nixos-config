@@ -28,6 +28,7 @@
     stylix.enable = true;
     wireshark.enable = false;
     virt-manager.enable = false;
+    shell.zsh.enable = true;
   };
 
 
