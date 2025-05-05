@@ -14,7 +14,7 @@
     isNormalUser = true;
     description = "docair";
     extraGroups = ["networkmanager" "wheel" "wireshark" "libvirtd" ];
-    shell = pkgs.zsh;
+    shell = pkgs.bash;
   };
 
   myModules = {
@@ -28,7 +28,7 @@
     stylix.enable = true;
     wireshark.enable = false;
     virt-manager.enable = false;
-    shell.zsh.enable = true;
+    shell.zsh.enable = false;
   };
 
 
