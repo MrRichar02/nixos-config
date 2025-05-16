@@ -1,12 +1,13 @@
 {
-    imports = [
-        ./style
-        ./system
-        ./services
-        ./wms
-        ./shells
-        ./wireshark.nix
-        ./virt-manager.nix
-        ./docker.nix
-    ];
+  imports = [
+    ./style
+    ./system
+    ./services
+    ./wms
+    ./shells
+    ./wireshark.nix
+    ./virt-manager.nix
+    ./docker.nix
+    ./podman.nix
+  ];
 }
