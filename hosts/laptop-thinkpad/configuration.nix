@@ -13,7 +13,7 @@
   users.users.docair = {
     isNormalUser = true;
     description = "docair";
-    extraGroups = ["networkmanager" "wheel" "wireshark" "libvirtd" ];
+    extraGroups = ["networkmanager" "wheel" "libvirtd" ];
     shell = pkgs.bash;
   };
 
