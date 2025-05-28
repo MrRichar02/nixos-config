@@ -8,16 +8,30 @@
 
   outputs = { nixpkgs, ... } @ inputs:
     {
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+      nixosConfigurations = { 
+        "thinkpad" = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
 
-        specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs; };
 
-        modules = [
-          ./hosts/laptop-thinkpad/configuration.nix
-          ./modules
-          inputs.stylix.nixosModules.stylix
-        ];
+          modules = [
+            ./hosts/laptop-thinkpad/configuration.nix
+            ./modules
+            inputs.stylix.nixosModules.stylix
+          ];
+        };
+
+        "ideapad" = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+
+          specialArgs = { inherit inputs; };
+
+          modules = [
+            ./hosts/laptop-ideapad/configuration.nix
+            ./modules
+            inputs.stylix.nixosModules.stylix
+          ];
+        };
       };
     };
 }
