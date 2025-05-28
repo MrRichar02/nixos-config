@@ -11,8 +11,19 @@
     # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
     # Enable networking
     networking.networkmanager.enable = true;
+
+    # Disable NetworkManager's internal DNS resolution
     networking.networkmanager.dns = "none";
-    networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
-    #networking.networkmanager.insertNameservers = [ "1.1.1.1" "8.8.8.8"];
+
+    # These options are unnecessary when managing DNS ourselves
+    networking.useDHCP = false;
+    networking.dhcpcd.enable = false;
+
+    networking.nameservers = [
+      "1.1.1.1"
+      "1.0.0.1"
+      "8.8.8.8"
+      "8.8.4.4"
+    ];
   };
 }
