@@ -14,7 +14,17 @@
     isNormalUser = true;
     description = "docair";
     extraGroups = ["networkmanager" "wheel" "libvirtd" "docker" ];
-    shell = pkgs.bash;
+    shell = pkgs.fish;
+  };
+
+  programs.fish = {
+    enable = true;
+
+    shellAliases = {
+      ll = "ls -l";
+    };
+
+    shellInit = "echo 'Welcome mrirchar'";
   };
 
   myModules = {
