@@ -27,7 +27,7 @@
     nix.enable = true;
     stylix.enable = true;
     wireshark.enable = false;
-    virt-manager.enable = true;
+    virt-manager.enable = false;
     shell.zsh.enable = false;
     docker.enable = true;
     podman.enable = false;
