@@ -17,6 +17,8 @@
     shell = pkgs.bash;
   };
 
+  services.kubernetes.kubelet.enable = true;
+
   myModules = {
     bootloader.enable = true;
     audio.enable = true;
