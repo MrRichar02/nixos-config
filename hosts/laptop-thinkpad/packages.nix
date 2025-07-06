@@ -10,5 +10,8 @@
     minikube
     kubectl
     docker-machine-kvm2
+    dbeaver-bin
+    mangohud
+    protonup
   ];
 }
