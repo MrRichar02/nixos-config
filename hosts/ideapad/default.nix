@@ -13,7 +13,7 @@
   users.users.docair = {
     isNormalUser = true;
     description = "docair";
-    extraGroups = ["networkmanager" "wheel" "libvirtd" "docker" ];
+    extraGroups = ["networkmanager" "wheel" "podman" ];
     shell = pkgs.bash;
   };
 
@@ -29,8 +29,8 @@
     wireshark.enable = false;
     virt-manager.enable = false;
     shell.zsh.enable = false;
-    docker.enable = true;
-    podman.enable = false;
+    docker.enable = false;
+    podman.enable = true;
   };
 
   hardware.graphics = {
