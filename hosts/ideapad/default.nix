@@ -33,9 +33,18 @@
     podman.enable = true;
   };
 
-  hardware.graphics = {
-    enable = true;
-  };
+	services.fwupd.enable = true;
+
+	hardware = {
+
+		cpu.amd.updateMicrocode = true;
+
+		graphics = {
+			enable = true;
+			enable32Bit = true;
+		};
+
+	};
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
