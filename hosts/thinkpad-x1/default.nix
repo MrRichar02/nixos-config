@@ -33,24 +33,33 @@
     podman.enable = true;
   };
 
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-    extraPackages = with pkgs; [
-    ];
-  };
+	hardware = {
+
+		cpu.intel.updateMicrocode = true;
+
+		graphics = {
+			enable = true;
+			enable32Bit = true;
+			extraPackages = with pkgs; [
+				vaapiIntel
+				intel-media-driver
+			];
+		};
+	};
+
+	services.fwupd.enable = true;
 
   programs.steam = {
     enable = true;
-    gamescopeSession.enable = true;
+    # gamescopeSession.enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
-  programs.gamemode.enable = true;
+  # programs.gamemode.enable = true;
 
-  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
+  # environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
