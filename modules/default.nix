@@ -5,9 +5,7 @@
     ./services
     ./wms
     ./shells
-    ./wireshark.nix
-    ./virt-manager.nix
-    ./docker.nix
-    ./podman.nix
+		./cli
+		./applications
   ];
 }

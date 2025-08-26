@@ -1,5 +1,8 @@
-{lib, config, ...}:
 {
+  lib,
+  config,
+  ...
+}: {
   options.myModules.networking.enable = lib.mkEnableOption "enables networking module";
 
   config = lib.mkIf config.myModules.networking.enable {
@@ -25,5 +28,12 @@
       "8.8.8.8"
       "8.8.4.4"
     ];
+
+    # Open ports in the firewall.
+    # networking.firewall.allowedTCPPorts = [ ... ];
+    # networking.firewall.allowedUDPPorts = [ ... ];
+    # Or disable the firewall altogether.
+    # networking.firewall.enable = false;
+    #networking.firewall.trustedInterfaces = [ "enp1s0" "virbr0" "vnet0" ];
   };
 }

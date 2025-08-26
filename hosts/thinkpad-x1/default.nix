@@ -13,25 +13,22 @@
   users.users.docair = {
     isNormalUser = true;
     description = "docair";
-    extraGroups = ["networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel" "podman" ];
     shell = pkgs.bash;
   };
 
   myModules = {
-    bootloader.enable = true;
+		basic.enable = true;
     audio.enable = true;
     networking.enable = true;
     hyprland.enable = true;
-    timezone.enable = true;
-    keymap.enable = true;
     nix.enable = true;
     stylix.enable = true;
-    wireshark.enable = false;
-    virt-manager.enable = false;
-    shell.zsh.enable = false;
-    docker.enable = false;
     podman.enable = true;
+		steam.enable = true;
   };
+
+  services.udisks2.enable = true;
 
 	hardware = {
 
@@ -49,13 +46,6 @@
 
 	services.fwupd.enable = true;
 
-  programs.steam = {
-    enable = true;
-    # gamescopeSession.enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-  };
 
   # programs.gamemode.enable = true;
 
