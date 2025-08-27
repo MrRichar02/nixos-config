@@ -3,7 +3,7 @@
   config,
   ...
 }: {
-  options.myModules.steam.enable = lib.EnableOption "enables steam";
+  options.myModules.steam.enable = lib.mkEnableOption "enables steam";
 
   config = lib.mkIf config.myModules.steam.enable {
     programs.steam = {
