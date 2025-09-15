@@ -17,6 +17,8 @@
     shell = pkgs.bash;
   };
 
+	services.gnome.gnome-keyring.enable = true;
+
   myModules = {
 		basic.enable = true;
     audio.enable = true;

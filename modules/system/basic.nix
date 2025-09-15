@@ -17,7 +17,13 @@
       efiSupport = true;
       device = "nodev";
       useOSProber = true;
-      theme = "${pkgs.catppuccin-grub}";
+      # theme = "${pkgs.catppuccin-grub}";
+			theme = pkgs.fetchFromGitHub { # current as of 11/2022
+				owner = "shvchk";
+				repo = "fallout-grub-theme";
+				rev = "2c51d28701c03c389309e34585ca8ff2b68c23e9";
+				sha256 = "sha256-iQU1Rv7Q0BFdsIX9c7mxDhhYaWemuaNRYs+sR1DF0Rc=";
+			};
     };
 
     # Set your time zone.
