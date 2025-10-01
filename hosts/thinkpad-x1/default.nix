@@ -13,7 +13,7 @@
   users.users.docair = {
     isNormalUser = true;
     description = "docair";
-    extraGroups = ["networkmanager" "wheel" "podman" "libvirtd" ];
+    extraGroups = ["networkmanager" "wheel" "podman" ];
     shell = pkgs.bash;
   };
 
@@ -28,7 +28,6 @@
     stylix.enable = true;
     podman.enable = true;
 		steam.enable = true;
-		virt-manager.enable = true;
   };
 
   services.udisks2.enable = true;
