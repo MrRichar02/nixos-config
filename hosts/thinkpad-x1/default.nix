@@ -1,8 +1,12 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{ config, pkgs, inputs, ... }: 
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -13,41 +17,46 @@
   users.users.docair = {
     isNormalUser = true;
     description = "docair";
-    extraGroups = ["networkmanager" "wheel" "podman" ];
+    extraGroups = ["networkmanager" "wheel" "podman"];
     shell = pkgs.bash;
   };
 
-	services.gnome.gnome-keyring.enable = true;
+  services.gnome.gnome-keyring.enable = true;
 
   myModules = {
-		basic.enable = true;
+    basic.enable = true;
     audio.enable = true;
     networking.enable = true;
     hyprland.enable = true;
     nix.enable = true;
     stylix.enable = true;
     podman.enable = true;
-		steam.enable = true;
+    steam.enable = true;
   };
 
   services.udisks2.enable = true;
 
-	hardware = {
+  zramSwap = {
+    enable = true;
+    priority = 100;
+    algorithm = "lz4";
+    memoryPercent = 50;
+  };
 
-		cpu.intel.updateMicrocode = true;
+  hardware = {
+    cpu.intel.updateMicrocode = true;
 
-		graphics = {
-			enable = true;
-			enable32Bit = true;
-			extraPackages = with pkgs; [
-				vaapiIntel
-				intel-media-driver
-			];
-		};
-	};
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+      extraPackages = with pkgs; [
+        vaapiIntel
+        intel-media-driver
+      ];
+    };
+  };
 
-	services.fwupd.enable = true;
-
+  services.fwupd.enable = true;
 
   # programs.gamemode.enable = true;
 
