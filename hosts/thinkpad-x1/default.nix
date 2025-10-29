@@ -23,6 +23,8 @@
 
   services.gnome.gnome-keyring.enable = true;
 
+	xdg.portal.wlr.enable = true;
+
   myModules = {
     basic.enable = true;
     audio.enable = true;
