@@ -7,9 +7,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     adwaita-icon-theme
-    minikube
-    kubectl
     dbeaver-bin
-    mangohud
+		firefoxpwa
   ];
 }

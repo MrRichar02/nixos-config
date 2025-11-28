@@ -23,13 +23,28 @@
 
   services.gnome.gnome-keyring.enable = true;
 
-	xdg.portal.wlr.enable = true;
+  programs.firefox = {
+    enable = true;
+    package = pkgs.firefox;
+    nativeMessagingHosts.packages = [pkgs.firefoxpwa];
+  };
+
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-wlr
+    ];
+		config.common.default = "*";
+  };
+
+  hardware.bluetooth.enable = true;
 
   myModules = {
     basic.enable = true;
     audio.enable = true;
     networking.enable = true;
-    hyprland.enable = true;
     nix.enable = true;
     stylix.enable = true;
     podman.enable = true;
@@ -52,7 +67,7 @@
       enable = true;
       enable32Bit = true;
       extraPackages = with pkgs; [
-        vaapiIntel
+        intel-vaapi-driver
         intel-media-driver
       ];
     };
