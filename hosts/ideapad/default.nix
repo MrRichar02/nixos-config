@@ -1,8 +1,12 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{ config, pkgs, inputs, ... }: 
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -13,24 +17,41 @@
   users.users.docair = {
     isNormalUser = true;
     description = "docair";
-    extraGroups = ["networkmanager" "wheel" "podman" ];
+    extraGroups = ["networkmanager" "wheel" "podman"];
     shell = pkgs.bash;
   };
 
-	xdg.portal.wlr.enable = true;
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    config = {
+      common = {
+        default = ["wlr" "gtk"];
+        "org.freedesktop.impl.portal.Screenshot" = ["wlr"];
+        "org.freedesktop.impl.portal.ScreenCast" = ["wlr"];
+      };
+    };
+
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-wlr
+    ];
+  };
+
+  services.gnome.gnome-keyring.enable = true;
 
   myModules = {
-		basic.enable = true;
+    basic.enable = true;
     audio.enable = true;
     networking.enable = true;
-    hyprland.enable = true;
+    # hyprland.enable = true;
     nix.enable = true;
     stylix.enable = true;
     podman.enable = true;
-		steam.enable = true;
+    steam.enable = true;
   };
 
-	services.fwupd.enable = true;
+  services.fwupd.enable = true;
   services.udisks2.enable = true;
 
   boot.kernelParams = [
@@ -40,18 +61,16 @@
     "zswap.shrinker_enabled=1" # whether to shrink the pool proactively on high memory pressure
   ];
 
-	boot.initrd.systemd.enable = true;
+  boot.initrd.systemd.enable = true;
 
-	hardware = {
+  hardware = {
+    cpu.amd.updateMicrocode = true;
 
-		cpu.amd.updateMicrocode = true;
-
-		graphics = {
-			enable = true;
-			enable32Bit = true;
-		};
-
-	};
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
