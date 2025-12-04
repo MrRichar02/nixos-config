@@ -23,42 +23,26 @@
 
   services.gnome.gnome-keyring.enable = true;
 
-  programs.firefox = {
-    enable = true;
-    package = pkgs.firefox;
-    nativeMessagingHosts.packages = [pkgs.firefoxpwa];
-  };
-
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-      xdg-desktop-portal-wlr
-    ];
-		config.common.default = "*";
-  };
-
-  hardware.bluetooth.enable = true;
-
   myModules = {
-    basic.enable = true;
+    bootloader.enable = true;
+    timezone.enable = true;
+    keymap.enable = true;
     audio.enable = true;
     networking.enable = true;
+		zswap.enable = true;
     nix.enable = true;
     stylix.enable = true;
+
     podman.enable = true;
+
+		mango.enable = true;
+
     steam.enable = true;
+
+		firefoxpwa.enable = true;
   };
 
   services.udisks2.enable = true;
-
-  zramSwap = {
-    enable = true;
-    priority = 100;
-    algorithm = "lz4";
-    memoryPercent = 50;
-  };
 
   hardware = {
     cpu.intel.updateMicrocode = true;

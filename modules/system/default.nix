@@ -3,6 +3,9 @@
     ./nix.nix
     ./audio.nix
     ./networking.nix
-		./basic.nix
+		./zswap.nix
+		./bootloader.nix
+		./keymap.nix
+		./timezone.nix
   ];
 }

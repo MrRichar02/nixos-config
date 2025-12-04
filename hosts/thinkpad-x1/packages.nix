@@ -7,7 +7,5 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     adwaita-icon-theme
-    dbeaver-bin
-		firefoxpwa
   ];
 }
