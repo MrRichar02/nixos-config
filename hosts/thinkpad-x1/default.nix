@@ -23,6 +23,8 @@
 
   services.gnome.gnome-keyring.enable = true;
 
+	programs.mango.enable = true;
+
   myModules = {
     bootloader.enable = true;
     timezone.enable = true;
@@ -34,8 +36,6 @@
     stylix.enable = true;
 
     podman.enable = true;
-
-		mango.enable = true;
 
     steam.enable = true;
 
@@ -59,7 +59,7 @@
 
   services.fwupd.enable = true;
 
-  # programs.gamemode.enable = true;
+  programs.gamemode.enable = true;
 
   # environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
 
