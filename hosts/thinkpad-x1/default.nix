@@ -38,8 +38,6 @@
     podman.enable = true;
 
     steam.enable = true;
-
-		firefoxpwa.enable = true;
   };
 
   services.udisks2.enable = true;
