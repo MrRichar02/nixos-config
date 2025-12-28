@@ -37,7 +37,6 @@
     podman.enable = true;
 
     steam.enable = true;
-		firefoxpwa.enable = true;
   };
 
   services.fwupd.enable = true;
