@@ -27,11 +27,10 @@
 
   myModules = {
     bootloader.enable = true;
-    timezone.enable = true;
-    keymap.enable = true;
+		keymap.enable = true;
+		timezone.enable = true;
     audio.enable = true;
     networking.enable = true;
-		zswap.enable = true;
     nix.enable = true;
     stylix.enable = true;
 
@@ -40,28 +39,17 @@
     steam.enable = true;
   };
 
+  services.fwupd.enable = true;
   services.udisks2.enable = true;
 
-	programs.localsend.enable = true;
-
   hardware = {
-    cpu.intel.updateMicrocode = true;
+    cpu.amd.updateMicrocode = true;
 
     graphics = {
       enable = true;
       enable32Bit = true;
-      extraPackages = with pkgs; [
-        intel-vaapi-driver
-        intel-media-driver
-      ];
     };
   };
-
-  services.fwupd.enable = true;
-
-  programs.gamemode.enable = true;
-
-  # environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
