@@ -23,7 +23,7 @@
 
   services.gnome.gnome-keyring.enable = true;
 
-	programs.mango.enable = true;
+	programs.mango.enable = false;
 
   myModules = {
     bootloader.enable = true;
@@ -38,6 +38,7 @@
     podman.enable = true;
 
     steam.enable = true;
+		hyprland.enable = true;
   };
 
   services.udisks2.enable = true;
