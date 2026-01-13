@@ -40,18 +40,6 @@
           ];
         };
 
-        "khan" = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-
-          specialArgs = { inherit inputs; };
-
-          modules = [
-            ./hosts/khan
-            ./modules
-            inputs.stylix.nixosModules.stylix
-						inputs.mango.nixosModules.mango
-          ];
-        };
       };
     };
 }
