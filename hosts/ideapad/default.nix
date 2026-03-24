@@ -39,8 +39,6 @@
     stylix.enable = true;
 
     podman.enable = true;
-
-    steam.enable = true;
   };
 
   services.fwupd.enable = true;
